@@ -1,4 +1,6 @@
-import { Cards, Proceed } from "@/components";
+"use client";
+import { useState } from "react";
+import { Cards, CheckOutModal, Proceed } from "@/components";
 
 export default function Home() {
   const Infos = [
@@ -22,27 +24,32 @@ export default function Home() {
     },
   ];
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <div className="w-[85%] mx-auto mt-16">
-      <div className="flex gap-4">
-        <div className="w-[70%]">
-          {Infos.map((info, index) => (
-            <Cards
-              key={index}
-              imageSrc={info.imageSrc}
-              category={info.category}
-              title={info.title}
-              instructor={info.instructor}
-              time={info.time}
-              played={info.played}
-              price={info.price}
-            />
-          ))}
-        </div>
-        <div className="w-[25%]">
-          <Proceed />
+    <>
+      <div className="w-[85%] mx-auto mt-16">
+        <div className="flex gap-4">
+          <div className="w-[70%]">
+            {Infos.map((info, index) => (
+              <Cards
+                key={index}
+                imageSrc={info.imageSrc}
+                category={info.category}
+                title={info.title}
+                instructor={info.instructor}
+                time={info.time}
+                played={info.played}
+                price={info.price}
+              />
+            ))}
+          </div>
+          <div className="w-[25%]">
+            <Proceed onCheckoutClick={() => setIsModalOpen(true)} />
+          </div>
         </div>
       </div>
-    </div>
+      {isModalOpen && <CheckOutModal onClose={() => setIsModalOpen(false)} />}
+    </>
   );
 }
