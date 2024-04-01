@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import { useState } from "react";
 
 const Logo = () => {
   return (
@@ -49,6 +50,8 @@ const Badge = () => {
 };
 
 const Navbar = () => {
+  const [isModalActive, setIsModalActive] = useState(false);
+
   return (
     <div className="bg-[#26235B] text-white ">
       <div className=" w-4/5 mx-auto py-4 flex justify-between items-center">
@@ -58,10 +61,27 @@ const Navbar = () => {
         <div>
           <NavigationLinks />
         </div>
-        <div className="flex items-center space-x-4">
-          <Search />
-          <Badge />
-        </div>
+        {!isModalActive && (
+          <div
+            className="flex items-center space-x-4"
+            onClick={() => setIsModalActive(true)}
+          >
+            <Search />
+            <Badge />
+          </div>
+        )}
+
+        {isModalActive && (
+          <div
+            className="flex gap-8 border rounded-full"
+            onClick={() => setIsModalActive(false)}
+          >
+            <div className="py-3 pl-6">Login</div>
+            <div className="bg-[#FFB606] text-[#26235B] py-3  px-6 rounded-full">
+              Register
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

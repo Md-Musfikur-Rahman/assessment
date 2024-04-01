@@ -1,5 +1,8 @@
-import React from "react";
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import { CouponModal } from ".";
 
 interface CardsProps {
   imageSrc: string;
@@ -20,6 +23,8 @@ const Cards = ({
   played,
   price,
 }: CardsProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="bg-[#FCFCFC] border rounded-2xl shadow-sm p-4 mb-5">
       <div className="flex flex-col gap-4">
@@ -77,15 +82,24 @@ const Cards = ({
             </div>
 
             <div className="text-3xl">{price} BDT</div>
-
-            <div className="flex gap-2">
-              <div className="text-base font-light">Have a Coupon Code</div>
-              <Image
-                src="/img/arrow 2.svg"
-                alt="arrow"
-                height={16}
-                width={16}
-              />
+            <div className="relative">
+              {!isModalOpen && (
+                <div
+                  className="flex gap-2 items-center"
+                  onClick={() => setIsModalOpen(true)}
+                >
+                  <div className="text-base font-light">Have a Coupon Code</div>
+                  <Image
+                    src="/img/arrow 2.svg"
+                    alt="arrow"
+                    height={16}
+                    width={16}
+                  />
+                </div>
+              )}
+              {isModalOpen && (
+                <CouponModal onClose={() => setIsModalOpen(false)} />
+              )}
             </div>
           </div>
         </div>
