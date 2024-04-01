@@ -50,7 +50,7 @@ const Button = ({
 
 const Proceed = () => {
   return (
-    <div className="bg-[#FCFCFC] border rounded-xl shadow-sm px-4 py-[13px] flex flex-col gap-6">
+    <div className="bg-[#FCFCFC] border rounded-2xl shadow-sm px-4 py-[13px] flex flex-col gap-6">
       <div className="flex justify-between items-center text-[#26235B] ">
         <div className="uppercase text-2xl font-bold ">Proceed</div>
         <div className="capitalize font-light">Total 2 products</div>

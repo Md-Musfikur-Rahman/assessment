@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <div>
       <Image
-        src="/img/assessment-logo 1.png"
+        src="/img/assessment-logo 1.svg"
         alt="logo"
         height={67}
         width={191}
@@ -31,7 +31,7 @@ const Search = () => {
   return (
     <div className="p-2 rounded-full">
       <Image
-        src="/img/Magnifiying Glass.png"
+        src="/img/Magnifiying Glass.svg"
         alt="search"
         height={15}
         width={15}
@@ -43,14 +43,14 @@ const Search = () => {
 const Badge = () => {
   return (
     <div className="rounded-full">
-      <Image src="/img/Ellipse 16.png" alt="search" height={50} width={50} />
+      <Image src="/img/Ellipse 16.svg" alt="search" height={50} width={50} />
     </div>
   );
 };
 
 const Navbar = () => {
   return (
-    <div className="bg-gray-900 text-white ">
+    <div className="bg-[#26235B] text-white ">
       <div className=" w-4/5 mx-auto py-4 flex justify-between items-center">
         <div className="text-2xl font-bold">
           <Logo />
