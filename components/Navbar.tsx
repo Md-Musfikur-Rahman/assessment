@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { HamburgerMenu } from ".";
 
 const Logo = () => {
   return (
@@ -26,10 +27,6 @@ const NavigationLinks = () => {
       <li>Contact</li>
     </ul>
   );
-};
-
-const HamburgerMenu = () => {
-  return <div>Menu</div>;
 };
 
 const Search = () => {
