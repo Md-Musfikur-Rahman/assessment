@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        tiny: { min: "480px", max: "639px" },
+        tiny: { min: "0px", max: "639px" },
         // => @media (min-width: 480px and max-width: 639px) { ... }
         sm: { min: "640px", max: "767px" },
         // => @media (min-width: 640px and max-width: 767px) { ... }
