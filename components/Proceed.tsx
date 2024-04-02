@@ -38,10 +38,12 @@ const Proceed = ({ onCheckoutClick }: any) => {
 
   return (
     <>
-      <div className="bg-[#FCFCFC] border rounded-2xl shadow-sm px-4 py-[13px] flex flex-col gap-6">
+      <div className="bg-[#FCFCFC] border rounded-2xl shadow-sm px-4 py-[13px] flex flex-col gap-6 w-fit mx-auto">
         <div className="flex justify-between items-center text-[#26235B] ">
           <div className="uppercase text-2xl font-bold ">Proceed</div>
-          <div className="capitalize font-light">Total 2 products</div>
+          <div className="capitalize font-light text-right">
+            Total 2 products
+          </div>
         </div>
         <div className="flex flex-col items-start justify-end h-full relative">
           <div className="absolute bg-[#FFB606] w-[40%] h-1 z-10"></div>

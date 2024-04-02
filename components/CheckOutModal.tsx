@@ -5,8 +5,8 @@ const CheckOutModal = ({ onClose }: any) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-20">
       {/* Modal */}
-      <div className="w-[75%]  bg-[#FCFCFC] rounded-[25px] shadow-lg relative z-50 flex justify-between gap-4 border-[#BCBBCC] border-4">
-        <div className=" -ml-1 -my-1 relative">
+      <div className="w-[75%] md:w-[90%] md:p-4 tiny:w-[90%] tiny:p-2 sm:w-[90%] sm:p-2 bg-[#FCFCFC] rounded-[25px] shadow-lg relative z-50 flex justify-between gap-4 border-[#BCBBCC] border-4">
+        <div className=" -ml-1 -my-1 relative md:hidden tiny:hidden sm:hidden">
           <Image src="/img/Maskgroup.svg" alt="mask" height={1} width={368} />{" "}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white ">
             <div className="font-bold text-3xl">Pay Now!</div>
@@ -24,9 +24,9 @@ const CheckOutModal = ({ onClose }: any) => {
           <div className="flex flex-col gap-[60px] justify-center">
             <div className="flex flex-col gap-6">
               <div className=" text-xl font-extralight">PAYMENT TYPE</div>
-              <div className="flex gap-16">
+              <div className="flex tiny:flex-col gap-16">
                 {options.map((option) => (
-                  <div className="flex items-center gap-4" key={option.id}>
+                  <div className="flex  items-center gap-4" key={option.id}>
                     <input
                       type="radio"
                       id={option.id}

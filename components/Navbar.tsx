@@ -28,6 +28,10 @@ const NavigationLinks = () => {
   );
 };
 
+const HamburgerMenu = () => {
+  return <div>Menu</div>;
+};
+
 const Search = () => {
   return (
     <div className="p-2 rounded-full">
@@ -54,16 +58,21 @@ const Navbar = () => {
 
   return (
     <div className="bg-[#26235B] text-white ">
-      <div className=" w-4/5 mx-auto py-4 flex justify-between items-center">
+      <div className="w-4/5 mx-auto py-4 flex justify-between items-center">
         <div className="text-2xl font-bold">
           <Logo />
         </div>
-        <div>
+
+        <div className="md:hidden tiny:hidden sm:hidden">
           <NavigationLinks />
         </div>
+        <div className="hidden md:block tiny:block sm:block">
+          <HamburgerMenu />
+        </div>
+
         {!isModalActive && (
           <div
-            className="flex items-center space-x-4"
+            className="flex items-center space-x-4 md:hidden tiny:hidden sm:hidden"
             onClick={() => setIsModalActive(true)}
           >
             <Search />
@@ -73,7 +82,7 @@ const Navbar = () => {
 
         {isModalActive && (
           <div
-            className="flex gap-8 border rounded-full"
+            className="flex gap-8 border rounded-full md:hidde tiny:hidden sm:hidden"
             onClick={() => setIsModalActive(false)}
           >
             <div className="py-3 pl-6">Login</div>

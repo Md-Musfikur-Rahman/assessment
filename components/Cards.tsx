@@ -26,16 +26,16 @@ const Cards = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="bg-[#FCFCFC] border rounded-2xl shadow-sm p-4 mb-5">
+    <div className="bg-[#FCFCFC] border rounded-2xl shadow-sm p-4 mb-5 md:w-fit md:mx-auto tiny:w-fit tiny:mx-auto">
       <div className="flex flex-col gap-4">
-        <div className="flex gap-4">
+        <div className="flex md:flex-col tiny:flex-col gap-4">
           <div className="flex-1">
             <Image src={imageSrc} alt={title} height={285} width={440} />
           </div>
 
           <div className="flex flex-1 flex-col gap-6">
             <div className="flex flex-col gap-4">
-              <div className="flex justify-between">
+              <div className="flex justify-between ">
                 <div className="text-base font-extralight">{category}</div>
                 <div className="flex gap-8">
                   <Image

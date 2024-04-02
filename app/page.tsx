@@ -29,9 +29,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-[85%] mx-auto mt-16">
-        <div className="flex gap-4">
-          <div className="w-[70%]">
+      <div className="w-[85%] md:w-full tiny:w-full mx-auto mt-16">
+        <div className="flex gap-4 md:gap-2 tiny:flex-col sm:flex-col">
+          <div className="w-[70%] md:w-2/3 tiny:w-full tiny:px-3 sm:w-full sm:px-3">
             {Infos.map((info, index) => (
               <Cards
                 key={index}
@@ -45,7 +45,7 @@ export default function Home() {
               />
             ))}
           </div>
-          <div className="w-[25%]">
+          <div className="w-[25%] md:w-[30%] tiny:w-full sm:w-full">
             <Proceed onCheckoutClick={() => setIsModalOpen(true)} />
           </div>
         </div>
